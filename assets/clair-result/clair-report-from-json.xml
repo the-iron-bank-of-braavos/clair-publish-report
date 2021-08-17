@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites id="clair.scanners" name="Clair Scanners" tests="36" failures="36" time="0.001">
+   <testsuite id="clair.scanner" name="Clair Scanner" tests="36" failures="36" time="0.001">
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The base-files package before 5.0.0ubuntu7.1 on Ubuntu 9.10 and before 
+5.0.0ubuntu20.10.04.2 on Ubuntu 10.04 LTS  as shipped on Dell Latitude 2110 
+netbooks  does not require authentication for package installation  which 
+allows remote archive servers and man-in-the-middle attackers to execute 
+arbitrary code via a crafted package.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The /etc/profile.d/60alias.sh script in the Mandriva bash package for Bash 
+2.05b  3.0  3.2  3.2.48  and 4.0 enables the --show-control-chars option in 
+LS_OPTIONS  which allows local users to send escape sequences to terminal 
+emulators  or hide the existence of a file  via a crafted filename.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+umount  when running with the Linux 2.6.15 kernel on Slackware Linux 10.2  
+allows local users to trigger a NULL dereference and application crash by 
+invoking the program with a pathname for a USB pen drive that was mounted and 
+then physically removed  which might allow the users to obtain sensitive 
+information  including core file contents.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The keycompare_mb function in sort.c in sort in GNU Coreutils through 8.23 on 
+64-bit platforms performs a size calculation without considering the number of 
+bytes occupied by multibyte characters  which allows attackers to cause a 
+denial of service (heap-based buffer overflow and application crash) or 
+possibly have unspecified other impact via long UTF-8 strings.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Untrusted search path vulnerability in dash 0.5.4  when used as a login shell  
+allows local users to execute arbitrary code via a Trojan horse .profile file 
+in the current working directory.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent 
+attackers to cause a denial of service (segmentation fault and crash) via a 
+long string to the uniq command  which triggers a stack-based buffer overflow 
+in the alloca function.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+gzip before 1.3 in Solaris 8  when called with the -f or -force flags  will 
+change the permissions of files that are hard linked to the target files  which 
+allows local users to view or modify these files.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Missing input validation in the ar/tar implementations of APT before version 
+2.1.2 could result in denial of service when processing specially crafted deb 
+files.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+iproute2 before 5.1.0 has a use-after-free in get_netnsid_from_name in 
+ip/ipnetns.c. NOTE: security relevance may be limited to certain uses of setuid 
+that  although not a default  are sometimes a configuration option offered to 
+end users. Even when setuid is used  other factors (such as C library 
+configuration) may block exploitability.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+In GNU Coreutils through 8.29  chown-core.c in chown and chgrp does not prevent 
+replacement of a plain file with a symlink during use of the POSIX -R -L 
+options  which allows local users to modify the ownership of arbitrary files by 
+leveraging a race condition.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Libgcrypt before 1.8.8 and 1.9.x before 1.9.3 mishandles ElGamal encryption 
+because it lacks exponent blinding to address a side-channel attack against 
+mpi_powm  and the window size is not chosen appropriately. (There is also an 
+interoperability problem because the selection of the k integer value does not 
+properly consider the differences between basic ElGamal encryption and 
+generalized ElGamal encryption.) This  for example  affects use of ElGamal in 
+OpenPGP.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+_gcry_md_block_write in cipher/hash-common.c in Libgcrypt version 1.9.0 has a 
+heap-based buffer overflow when the digest final function sets a large count 
+value. It is recommended to upgrade to 1.9.1 or later.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Incorrect sanitation of the 302 redirect field in HTTP transport method of apt 
+versions 1.4.8 and earlier can lead to content injection by a MITM attacker  
+potentially leading to remote code execution on the target machine.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+A flaw was found in the src/list.c of tar 1.33 and earlier. This flaw allows an 
+attacker who can submit a crafted input file to tar to cause uncontrolled 
+consumption of memory. The highest threat from this vulnerability is to system 
+availability.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The distcheck rule in dist-check.mk in GNU coreutils 5.2.1 through 8.1 allows 
+local users to gain privileges via a symlink attack on a file in a directory 
+tree under /tmp.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+An issue was discovered in disable_priv_mode in shell.c in GNU Bash through 5.0 
+patch 11. By default  if Bash is run with its effective UID not equal to its 
+real UID  it will drop privileges by setting its effective UID to its real UID. 
+However  it does so incorrectly. On Linux and other systems that support saved 
+UID functionality  the saved UID is not dropped. An attacker with command 
+execution in the shell can use enable -f for runtime loading of a new builtin  
+which can be a shared object that calls setuid() and therefore regains 
+privileges. However  binaries running with an effective UID of 0 are unaffected.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+gzexe in gzip 1.3.3 and earlier will execute an argument when the creation of a 
+temp file fails instead of exiting the program  which could allow remote 
+attackers or local users to execute arbitrary commands  a different 
+vulnerability than CVE-1999-1332.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+GNU Tar through 1.30  when --sparse is used  mishandles file shrinkage during 
+read access  which allows local users to cause a denial of service (infinite 
+read loop in sparse_dump_region in sparse.c) by modifying a file that is 
+supposed to be archived by a different user's process (e.g.  a system backup 
+running as root).
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+sensible-browser in sensible-utils before 0.0.11 does not validate strings 
+before launching the program specified by the BROWSER environment variable  
+which allows remote attackers to conduct argument-injection attacks via a 
+crafted URL  as demonstrated by a --proxy-pac-file argument.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+runuser in util-linux allows local users to escape to the parent session via a 
+crafted TIOCSTI ioctl call  which pushes characters to the terminal's input 
+buffer.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Tar 1.15.1 does not properly warn the user when extracting setuid or setgid 
+files  which may allow local users or remote attackers to gain privileges.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+In util-linux before 2.32-rc1  bash-completion/umount allows local users to 
+gain privileges by embedding shell commands in a mountpoint name  which is 
+mishandled during a umount command (within Bash) by a different user  as 
+demonstrated by logging in as root and entering umount followed by a tab 
+character for autocompletion.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent 
+attackers to cause a denial of service (segmentation fault and crash) via a 
+long string to the join command  when using the -i switch  which triggers a 
+stack-based buffer overflow in the alloca function.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The SUSE coreutils-i18n.patch for GNU coreutils allows context-dependent 
+attackers to cause a denial of service (segmentation fault and crash) via a 
+long string to the sort command  when using the (1) -d or (2) -M switch  which 
+triggers a stack-based buffer overflow in the alloca function.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Integer overflow in the keycompare_mb function in sort.c in sort in GNU 
+Coreutils through 8.23 might allow attackers to cause a denial of service 
+(application crash) or possibly have unspecified other impact via long strings.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+It was discovered that there was a ECDSA timing attack in the libgcrypt20 
+cryptographic library. Version affected: 1.8.4-5  1.7.6-2+deb9u3  and 
+1.6.3-2+deb8u4. Versions fixed: 1.8.5-2 and 1.6.3-2+deb8u7.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+APT had several integer overflows and underflows while parsing .deb packages  
+aka GHSL-2020-168 GHSL-2020-169  in files apt-pkg/contrib/extracttar.cc  
+apt-pkg/deb/debfile.cc  and apt-pkg/contrib/arfile.cc. This issue affects: apt 
+1.2.32ubuntu0 versions prior to 1.2.32ubuntu0.2; 1.6.12ubuntu0 versions prior 
+to 1.6.12ubuntu0.2; 2.0.2ubuntu0 versions prior to 2.0.2ubuntu0.2; 
+2.1.10ubuntu0 versions prior to 2.1.10ubuntu0.1;
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+An exploitable code execution vulnerability exists in the quota file 
+functionality of E2fsprogs 1.45.3. A specially crafted ext4 partition can cause 
+an out-of-bounds write on the heap  resulting in code execution. An attacker 
+can corrupt a partition to trigger this vulnerability.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+chroot in GNU coreutils  when used with --userspec  allows local users to 
+escape to the parent session via a crafted TIOCSTI ioctl call  which pushes 
+characters to the terminal's input buffer.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+It was found that apt-key in apt  all versions  do not correctly validate gpg 
+keys with the master keyring  leading to a potential man-in-the-middle attack.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+A code execution vulnerability exists in the directory rehashing functionality 
+of E2fsprogs e2fsck 1.45.4. A specially crafted ext4 directory can cause an 
+out-of-bounds write on the stack  resulting in code execution. An attacker can 
+corrupt a partition to trigger this vulnerability.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The mirror:// method implementation in Advanced Package Tool (APT) 1.6.x before 
+1.6.4 and 1.7.x before 1.7.0~alpha3 mishandles gpg signature verification for 
+the InRelease file of a fallback mirror  aka mirrorfail.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+The MOTD update script in the base-files package in Ubuntu 18.04 LTS before 
+10.1ubuntu2.2  and Ubuntu 18.10 before 10.1ubuntu6 incorrectly handled 
+temporary files. A local attacker could use this issue to cause a denial of 
+service  or possibly escalate privileges if kernel symlink restrictions were 
+disabled.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+An integer overflow in util-linux through 2.37.1 can potentially cause a buffer 
+overflow if an attacker were able to use system resources in a way that leads 
+to a large number in the /proc/sysvipc/sem file.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+pax_decode_header in sparse.c in GNU Tar before 1.32 had a NULL pointer 
+dereference when parsing certain archives that have malformed extended headers.
+
+See null for more details.
+         </failure>
+      </testcase>
+      <testcase id="null.null.null" name="null null null" time="0.001">
+         <failure message="See null" type="ERROR">
+Package null Version null is Vulnerable to null.
+
+Libgcrypt before 1.7.10 and 1.8.x before 1.8.3 allows a memory-cache 
+side-channel attack on ECDSA signatures that can be mitigated through the use 
+of blinding during the signing process in the _gcry_ecc_ecdsa_sign function in 
+cipher/ecc-ecdsa.c  aka the Return Of the Hidden Number Problem or ROHNP. To 
+discover an ECDSA key  the attacker needs access to either the local machine or 
+a different virtual machine on the same physical host.
+
+See null for more details.
+         </failure>
+      </testcase>
+   </testsuite>
+</testsuites>
