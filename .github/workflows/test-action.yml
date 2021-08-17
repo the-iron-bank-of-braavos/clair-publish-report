@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: action/checkout@v2
+        uses: actions/checkout@v1
       - name: Test publish action
         uses: mikepenz/action-junit-report@v2
         with:
