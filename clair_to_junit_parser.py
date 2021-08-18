@@ -47,7 +47,7 @@ def main():
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
                 status="unapproved",
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
-                failure_message=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
+                error=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['id']
             new_step.failure_type = "unapproved"
