@@ -36,11 +36,15 @@ def main():
     current_suite = None
     test_suites = []
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-            if current_sorted_level != clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']:
-                if current_suite:
-                    test_suites.append(current_suite)
-                current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
-                current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"]
+            #if current_sorted_level != clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']:
+            #    if current_suite:
+            #        test_suites.append(current_suite)
+            #    current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
+            #    current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"]
+            logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["id"])
+            logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
+            logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["id"])
+            logger.warning(url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"], classname=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']
