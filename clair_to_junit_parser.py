@@ -41,11 +41,11 @@ def main():
                     test_suites.append(current_suite)
                 current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
                 current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"]
-            new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"], classname=vuln["severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
+            new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"], classname=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']
             new_step.failure_type = "unapproved"
-            new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
+            new_step.failure_message = "Please have the following security issue reviewed: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             current_suite.test_cases.append(new_step)
         # try to write new file
