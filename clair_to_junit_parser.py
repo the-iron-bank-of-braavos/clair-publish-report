@@ -47,12 +47,11 @@ def main():
             new_step.failure_type = "unapproved"
             new_step.failure_message = "Please have the following security issue reviewed: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
-            logger.warning(new_step)
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
         logger.warning("---------------------------")
-        logger.warning(TestSuite.to_xml_string(test_suites))
+        logger.warning(TestSuite.to_file(f, ts))
         logger.warning("---------------------------")
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
