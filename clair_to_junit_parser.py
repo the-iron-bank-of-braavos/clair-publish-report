@@ -35,7 +35,7 @@ def main():
     current_sorted_level = None
     current_suite = None
     test_suites = []
-    for each  in clair_parsed_file['vulnerabilities']:
+    for each  in clair_parsed_file['vulnerabilities'][0]:
         print(each)
         print(['vulnerabilities'][each]['name'])
 
