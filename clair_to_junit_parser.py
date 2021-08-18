@@ -1,4 +1,4 @@
-mport json
+import json
 from junit_xml import TestSuite, TestCase
 import os
 import argparse
