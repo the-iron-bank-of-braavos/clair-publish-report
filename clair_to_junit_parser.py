@@ -51,15 +51,10 @@ def main():
         current_suite.test_cases.append(new_step)
         test_suites.append(current_suite)
     for vuln in clair_parsed_file["vulnerabilities"]:
-        logger.warning("vuln is: {}", vuln)
-        
-    # try to write new file
-    try:
-        with open(args.output, 'w') as outfile:
-            outfile.write(TestSuite.to_xml_string(test_suites))
-    except:
-        logger.exception("Filed saving file.")
+        logger.warning("name is: {}", vuln["id"])
+        logger.warning("name is: {}", vuln["name"])
+        logger.warning("link is: {}", vuln["links"])
 
-
+    
 if __name__ == "__main__":
     main()
