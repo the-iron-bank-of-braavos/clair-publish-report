@@ -35,23 +35,19 @@ def main():
     current_sorted_level = None
     current_suite = None
     test_suites = []
-#    for idVulnerability  in clair_parsed_file['vulnerabilities']:
-#         record = clair_parsed_file['vulnerabilities'][idVulnerability]['name']
-#         logger.warning(record)
-
-   for idVulnerability in clair_parsed_file["vulnerabilities"]:
-        if current_sorted_level != idVulnerability["normalized_severity"]:
-            if current_suite:
-                test_suites.append(current_suite)
-            current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
-            current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["severity"]
-        new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]['name'], classname=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]['links'], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
-        new_step.log = idVulnerability
-        new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"]
-        new_step.failure_type = "unapproved"
-        new_step.failure_message = "Please have the following security issue reviewed: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
-        new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
-        current_suite.test_cases.append(new_step)
+    for idVulnerability in clair_parsed_file["vulnerabilities"]:
+            if current_sorted_level != clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']:
+                if current_suite:
+                    test_suites.append(current_suite)
+                current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
+                current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"]
+            new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["vulnerability"], classname=vuln["severity"], status="unapproved", url=vuln["link"], stderr=vuln["description"])
+            new_step.log = idVulnerability
+            new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']
+            new_step.failure_type = "unapproved"
+            new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(vuln["link"])
+            new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
+            current_suite.test_cases.append(new_step)
         # try to write new file
         try:
             with open(args.output, 'w') as outfile:
@@ -59,5 +55,10 @@ def main():
         except:
             logger.exception("Filed saving file.")
 
+
 if __name__ == "__main__":
     main()
+#    for idVulnerability  in clair_parsed_file['vulnerabilities']:
+#         record = clair_parsed_file['vulnerabilities'][idVulnerability]['name']
+#         logger.warning(record)
+
