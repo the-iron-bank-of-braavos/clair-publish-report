@@ -37,7 +37,7 @@ def main():
     test_suites = []
     for each  in clair_parsed_file["vulnerabilities"]:
         logger.warning("name is  " + each)
-        logger.warning(each.['name'])
+        logger.warning([each]['name'])
 
 if __name__ == "__main__":
     main()
