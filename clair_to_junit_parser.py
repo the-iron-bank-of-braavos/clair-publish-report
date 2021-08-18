@@ -42,10 +42,12 @@ def main():
                 current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"])
                 current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["id"]
 
+            current_suite.failure= 1
             new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"], classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['id']
-            new_step.failure_type = "failure"
+            new_step.failure= "1"
+            new_step.failure_type = "unapproved"
             new_step.failure_message = "Please have the following security issue reviewed: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             current_suite.test_cases.append(new_step)
