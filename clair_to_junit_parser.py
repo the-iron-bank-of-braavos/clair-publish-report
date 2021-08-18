@@ -35,9 +35,8 @@ def main():
     current_sorted_level = None
     current_suite = None
     test_suites = []
-    for each  in clair_parsed_file["vulnerabilities"]:
-        logger.warning("name is  " + each)
-        logger.warning([each]['name'])
+    for each  in clair_parsed_file['vulnerabilities']:
+        print(each)
 
 if __name__ == "__main__":
     main()
