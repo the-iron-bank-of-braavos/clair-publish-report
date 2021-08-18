@@ -51,14 +51,15 @@ def main():
         current_suite.test_cases.append(new_step)
         test_suites.append(current_suite)
     for vuln in clair_parsed_file["vulnerabilities"]:
-        if current_sorted_level != vuln["severity"]:
+        #if current_sorted_level != vuln["severity"]:
+        if current_sorted_level != vuln["name"]:
             if current_suite:
                 test_suites.append(current_suite)
-            current_suite = TestSuite(name=vuln["severity"])
-            current_sorted_level = vuln["severity"]
-        new_step = TestCase(name=vuln["vulnerability"], classname=vuln["severity"], status="unapproved", url=vuln["link"], stderr=vuln["description"])
+            current_suite = TestSuite(name=vuln["name"])
+            current_sorted_level = vuln["name"]
+        new_step = TestCase(name=vuln["vulnerability"], classname=vuln["name"], status="unapproved", url=vuln["link"], stderr=vuln["description"])
         new_step.log = vuln
-        new_step.category = vuln["severity"]
+        new_step.category = vuln["name"]
         new_step.failure_type = "unapproved"
         new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(vuln["link"])
         new_step.failure_output = vuln["description"]
