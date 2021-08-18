@@ -29,7 +29,7 @@ def main():
         if os.path.exists(args.clairfile):
             with open(args.clairfile) as clairfile:
                 clair_parsed_file = json.load(clairfile)
-     except:
+    except:
         logger.exception("Failed to parse clair / clair_error file.  Exiting.")
 
     current_sorted_level = None
