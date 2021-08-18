@@ -44,7 +44,7 @@ def main():
             logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["id"])
             logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"])
             logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
-            logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])r
+            logger.warning(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step = TestCase(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"], classname=clair_parsed_file['vulnerabilities'][idVulnerability]["normalized_severity"], status="unapproved", url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"], stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['normalized_severity']
