@@ -51,7 +51,7 @@ def main():
         # try to write new file
     try:
         logger.warning("---------------------------")
-        logger.warning(current_suite.to_xml_string)
+        logger.warning(current_suite.to_xml_string.log)
         logger.warning("---------------------------")
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
