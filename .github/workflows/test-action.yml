@@ -15,12 +15,13 @@ jobs:
           pip install -r requirements.txt --upgrade
           python clair_to_junit_parser.py assets/clair-result/clair-report.json --output assets/clair-scanner-results.xml
           cat assets/clair-scanner-results.xml
-      - name: List files
-        run: |
-          ls -lta assets/
       - name: Test publish action
         uses: mikepenz/action-junit-report@v2
         with:
           report_paths: assets/*.xml
-
+      - name: Test Publish 2
+          uses: EnricoMi/publish-unit-test-result-action@v1
+          with:
+            if: always()
+            files: assets/*.xml
 
