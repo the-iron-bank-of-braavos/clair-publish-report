@@ -51,10 +51,10 @@ def main():
         current_suite.test_cases.append(new_step)
         test_suites.append(current_suite)
     for vuln in clair_parsed_file["vulnerabilities"]:
-        logger.warning("name is: {}", vuln["id"])
-        logger.warning("name is: {}", vuln["name"])
-        logger.warning("link is: {}", vuln["links"])
+        logger.warning("name is: {}", vuln[0])
+        logger.warning("name is: {}", vuln[1])
+        logger.warning("link is: {}", vuln[2])
 
-    
+
 if __name__ == "__main__":
     main()
