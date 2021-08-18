@@ -13,7 +13,7 @@ jobs:
           echo 'Install test requirements'
           pip install --upgrade pip
           pip install -r requirements.txt --upgrade
-          python clair_to_junit_parser.py assets/clair-result/clair-report.json --output ./assest/clair-scanner-results.xml
+          python clair_to_junit_parser.py assets/clair-result/clair-report.json --output ./assets/clair-scanner-results.xml
       - name: Test publish action
         uses: mikepenz/action-junit-report@v2
         with:
