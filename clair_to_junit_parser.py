@@ -32,22 +32,16 @@ def main():
     except:
         logger.exception("Failed to parse clair / clair_error file.  Exiting.")
 
-    current_sorted_level = None
     current_suite = None
     test_suites = []
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-            if current_sorted_level != clair_parsed_file['vulnerabilities'][idVulnerability]['id']:
-                if current_suite:
-                    test_suites.append(current_suite)
-                current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"])
-                current_sorted_level = clair_parsed_file['vulnerabilities'][idVulnerability]["id"]
-
+            current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["Scanner"])
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
                 status="unapproved",
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
-                error=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
+                stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['id']
             new_step.failure_type = "unapproved"
@@ -56,7 +50,6 @@ def main():
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
-        logger.warning("-- " + args.output )
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
     except Exception as ex:
