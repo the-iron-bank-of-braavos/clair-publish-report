@@ -35,7 +35,7 @@ def main():
     current_suite = None
     test_suites = []
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-            current_suite = TestSuite(name=clair_parsed_file['vulnerabilities'][idVulnerability]["Scanner"])
+            current_suite = TestSuite(name="Scanner Results")
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
