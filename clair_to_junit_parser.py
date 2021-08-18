@@ -45,7 +45,7 @@ def main():
             new_step.log = idVulnerability
             new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]["name"]
             new_step.failure_type = "unapproved"
-            new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(clair_parsed_file['vulnerabilities']["links"])
+            new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
             new_step.failure_output = description
             new_step.add_failure_info(description)
             current_suite.test_cases.append(new_step)
