@@ -50,6 +50,9 @@ def main():
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
+        log.warning("---------------------------")
+        log.warning(current_suite)
+        log.warning("---------------------------")
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
     except:
