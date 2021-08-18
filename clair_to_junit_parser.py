@@ -40,8 +40,9 @@ def main():
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["name"],
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["version"],
-                url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
-
+                url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
+                sterr=description)
+            new_step.log=description
             new_step.add_failure_info(description)
             current_suite.test_cases.append(new_step)
         # try to write new file
