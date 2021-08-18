@@ -18,6 +18,6 @@ jobs:
       - name: Test publish action
         uses: mikepenz/action-junit-report@v2
         with:
-          report_paths: assest/clair-scanner-results.xml
+          report_paths: assest/**/*.xml
 
 
