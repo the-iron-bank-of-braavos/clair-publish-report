@@ -43,11 +43,7 @@ def main():
                 status="unapproved",
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
                 stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
-            new_step.log = idVulnerability
-            new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]['id']
-            new_step.failure_type = "unapproved"
-            new_step.failure_message = "Please have the following security issue reviewed: {}".format(clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
-            new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
+            new_step.add_failure_info(message=f"{clair_parsed_file['vulnerabilities'][idVulnerability]["name"]}. {clair_parsed_file['vulnerabilities'][idVulnerability]["description"]}")
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
