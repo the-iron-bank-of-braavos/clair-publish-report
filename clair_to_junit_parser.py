@@ -35,8 +35,8 @@ def main():
     current_sorted_level = None
     current_suite = None
     test_suites = []
-    for each  in clair_parsed_file['vulnerabilities'][0]:
-        print(each[0]["name"])
-        
+    for idVulnerability  in clair_parsed_file['vulnerabilities']:
+         record = clair_parsed_file['vulnerabilities'][idVulnerability]['name'][0]
+
 if __name__ == "__main__":
     main()
