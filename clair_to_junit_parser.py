@@ -40,9 +40,7 @@ def main():
             description=clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"],
-                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
-                status="unapproved",
-                url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
+                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["name"])
 
             new_step.add_failure_info(message=f"{name}.{description}")
             current_suite.test_cases.append(new_step)
