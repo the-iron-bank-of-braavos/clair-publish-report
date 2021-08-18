@@ -38,12 +38,16 @@ def main():
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
             description=clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             new_step = TestCase(
-                name=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["name"],
-                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["version"],
+                name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
+                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["name"],
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
                 stderr=description)
+            new_step.log = idVulnerability
+            new_step.category = clair_parsed_file['vulnerabilities'][idVulnerability]["name"]
+            new_step.failure_type = "unapproved"
+            new_step.failure_message = "Please have the following security issue reviewed by Splunk: {}".format(clair_parsed_file['vulnerabilities']["link"])
+            new_step.failure_output = description
             new_step.add_failure_info(description)
-            new_step.log=description
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
