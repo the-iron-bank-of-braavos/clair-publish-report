@@ -39,11 +39,11 @@ def main():
             name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"]
             description=clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             new_step = TestCase(
-                name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
-                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
+                name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"],
+                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
                 status="unapproved",
-                url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
-                stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
+                url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
+
             new_step.add_failure_info(message=f"{name}.{description}")
             current_suite.test_cases.append(new_step)
         # try to write new file
