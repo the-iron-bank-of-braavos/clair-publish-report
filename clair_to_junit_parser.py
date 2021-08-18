@@ -53,7 +53,6 @@ def main():
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
     except:
-        TestSuite.to_file(outfile, ts)
         logger.exception("Filed saving file.")
 
 
