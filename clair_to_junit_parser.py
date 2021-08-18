@@ -49,11 +49,11 @@ def main():
             new_step.failure_output = clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             current_suite.test_cases.append(new_step)
         # try to write new file
-        try:
-            with open(args.output, 'w') as outfile:
-                outfile.write(TestSuite.to_xml_string(test_suites))
-        except:
-            logger.exception("Filed saving file.")
+    try:
+        with open(args.output, 'w') as outfile:
+            outfile.write(TestSuite.to_xml_string(test_suites))
+    except:
+        logger.exception("Filed saving file.")
 
 
 if __name__ == "__main__":
