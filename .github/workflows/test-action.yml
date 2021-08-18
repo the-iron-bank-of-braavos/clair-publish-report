@@ -19,9 +19,5 @@ jobs:
         uses: mikepenz/action-junit-report@v2
         with:
           report_paths: assets/*.xml
-      - name: Test Publish 2
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        with:
-          if: always()
-          files: assets/*.xml
+
 

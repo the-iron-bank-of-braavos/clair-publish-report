@@ -36,11 +36,10 @@ def main():
     test_suites = []
     test_suites.append(current_suite)
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-            name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"]
             description=clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             new_step = TestCase(
-                name=clair_parsed_file['vulnerabilities'][idVulnerability]["id"],
-                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
+                name=clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["name"].clair_parsed_file['vulnerabilities'][idVulnerability]["package"]["version"],
+                classname=clair_parsed_file['vulnerabilities'][idVulnerability]["id"],
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"])
 
             new_step.add_failure_info(description)
