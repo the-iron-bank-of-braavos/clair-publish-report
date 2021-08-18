@@ -20,8 +20,8 @@ jobs:
         with:
           report_paths: assets/*.xml
       - name: Test Publish 2
-          uses: EnricoMi/publish-unit-test-result-action@v1
-          with:
-            if: always()
-            files: assets/*.xml
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        with:
+          if: always()
+          files: assets/*.xml
 
