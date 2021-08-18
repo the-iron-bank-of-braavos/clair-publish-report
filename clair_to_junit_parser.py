@@ -36,14 +36,15 @@ def main():
     test_suites = []
     test_suites.append(current_suite)
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-
+            name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"]
+            description=clair_parsed_file['vulnerabilities'][idVulnerability]["description"]
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
                 status="unapproved",
                 url=clair_parsed_file['vulnerabilities'][idVulnerability]["links"],
                 stderr=clair_parsed_file['vulnerabilities'][idVulnerability]["description"])
-            new_step.add_failure_info(message=f"{clair_parsed_file['vulnerabilities'][idVulnerability]["name"]}. {clair_parsed_file['vulnerabilities'][idVulnerability]["description"]}")
+            new_step.add_failure_info(message=f"{name}.{description}")
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
