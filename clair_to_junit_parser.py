@@ -50,11 +50,10 @@ def main():
             current_suite.test_cases.append(new_step)
         # try to write new file
     try:
-        logger.warning("---------------------------")
-        TestSuite.to_file(outfile, ts)
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
     except:
+        TestSuite.to_file(outfile, ts)
         logger.exception("Filed saving file.")
 
 
