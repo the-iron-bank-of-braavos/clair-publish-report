@@ -32,10 +32,11 @@ def main():
     except:
         logger.exception("Failed to parse clair / clair_error file.  Exiting.")
 
-    current_suite = None
+    current_suite = current_suite = TestSuite(name="Scanner Results")
     test_suites = []
+    test_suites.append(current_suite)
     for idVulnerability in clair_parsed_file["vulnerabilities"]:
-            current_suite = TestSuite(name="Scanner Results")
+
             new_step = TestCase(
                 name=clair_parsed_file['vulnerabilities'][idVulnerability]["name"],
                 classname=clair_parsed_file['vulnerabilities'][idVulnerability]["severity"],
