@@ -51,8 +51,7 @@ def main():
         # try to write new file
     try:
         logger.warning("---------------------------")
-        logger.warning(TestSuite.to_file(f, ts))
-        logger.warning("---------------------------")
+        TestSuite.to_file(outfile, ts)
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
     except:
