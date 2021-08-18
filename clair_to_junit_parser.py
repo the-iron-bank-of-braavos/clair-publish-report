@@ -37,6 +37,9 @@ def main():
     test_suites = []
     for each  in clair_parsed_file['vulnerabilities']:
         print(each)
+        print("Name:", each['name'])
+        print("id:", each['id'])
+
 
 if __name__ == "__main__":
     main()
