@@ -52,8 +52,8 @@ def main():
     try:
         with open(args.output, 'w') as outfile:
             outfile.write(TestSuite.to_xml_string(test_suites))
-    except:
-        logger.exception("Filed saving file.")
+    except Exception as ex:
+        logger.exception("Filed saving file: " + ex)
 
 
 if __name__ == "__main__":
