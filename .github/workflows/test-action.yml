@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v1
       - name: convert2Junit
         run: |
-          @echo 'Install test requirements'
+          echo 'Install test requirements'
           pip install --upgrade pip
           pip install -r requirements.txt --upgrade
           python clair_to_junit_parser.py assets/clair-result/clainr-report.json --output assest/clair-scanner-results.xml
