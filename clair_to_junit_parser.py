@@ -37,7 +37,7 @@ def main():
     test_suites = []
     for idVulnerability  in clair_parsed_file['vulnerabilities']:
          record = clair_parsed_file['vulnerabilities'][idVulnerability]['name'][0]
-         print record
+         logger.warning(record)
 
 if __name__ == "__main__":
     main()
